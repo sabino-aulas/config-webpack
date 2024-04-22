@@ -6,12 +6,20 @@ const HTMLWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
     // Configuração do servidor (A extenção live server faz exatamente isto)
     devServer: {
-        static: path.join(__dirname, './'), // Abrindo o arquivo index.html da raiz
-        port: 3000 // Disponibilizando a porta 300 da nossa máquina para o servidor NodeJS
+        static: {
+            directory: path.join(__dirname, './'),
+        },
+        port: 3000, // Disponibilizando a porta 300 da nossa máquina para o servidor NodeJS
     },
-    entry: path.resolve(__dirname, './', 'main.js'), // Arquivo que o webpack vai iniciar a ler
+    watchOptions: {
+        ignored: './node_modules',
+    },
+    entry: { // Arquivos JS que o webpack vai disponibilizar como "chunks" (partes) do "bundle" (pacote)
+        index: path.resolve(__dirname, './', 'index.js'),
+        outra: path.resolve(__dirname, './', 'outra.js')
+    },
     output: { // Pasta e arquivo que será enviada a compilação do seu projeto em uma build
-        filename: '[name]-[hash].js',
+        filename: '[name]-[fullhash].js',
         path: path.resolve(__dirname, 'dist')
     },
     // Modo - development ou production
@@ -23,7 +31,7 @@ module.exports = {
             {
                 test: /\.js$/, // Pegando todos arquivos que terminam com .js
                 exclude: /node_modules/, // Ignora a pasta node_modules
-                loader: 'babel-loader'
+                loader: 'babel-loader',
             },
             {
                 test: /\.(sa|sc|c)ss$/, // Pegando todos os arquivos sass, scss ou css
@@ -41,9 +49,16 @@ module.exports = {
         ]
     },
     plugins: [
-        // Plugin para injetar o bundle no arquivo HTML
         new HTMLWebpackPlugin({
-            template: path.resolve(__dirname, "./", 'index.html')
+            filename: 'index.html',
+            template: path.resolve(__dirname, './', 'index.html'),
+            chunks: ['index'] // Indica qual bundle de entrypoint gerado será utilizado neste HTML
         }),
+        new HTMLWebpackPlugin({
+            filename: 'outra.html',
+            template: path.resolve(__dirname, './', 'outra.html'),
+            chunks: ['outra']
+        }),
+        // Adicione mais instâncias do HTMLWebpackPlugin para mais arquivos HTML
     ]
 }
