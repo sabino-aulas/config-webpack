@@ -9,14 +9,13 @@ module.exports = {
         static: {
             directory: path.join(__dirname, './'),
         },
-        port: 3000, // Disponibilizando a porta 300 da nossa máquina para o servidor NodeJS
+        port: 3001, // Disponibilizando a porta 300 da nossa máquina para o servidor NodeJS
     },
     watchOptions: {
         ignored: './node_modules',
     },
     entry: { // Arquivos JS que o webpack vai disponibilizar como "chunks" (partes) do "bundle" (pacote)
-        index: path.resolve(__dirname, './', 'index.js'),
-        outra: path.resolve(__dirname, './', 'outra.js')
+        main: path.resolve(__dirname, './', 'main.js')
     },
     output: { // Pasta e arquivo que será enviada a compilação do seu projeto em uma build
         filename: '[name]-[fullhash].js',
@@ -52,13 +51,8 @@ module.exports = {
         new HTMLWebpackPlugin({
             filename: 'index.html',
             template: path.resolve(__dirname, './', 'index.html'),
-            chunks: ['index'] // Indica qual bundle de entrypoint gerado será utilizado neste HTML
-        }),
-        new HTMLWebpackPlugin({
-            filename: 'outra.html',
-            template: path.resolve(__dirname, './', 'outra.html'),
-            chunks: ['outra']
-        }),
+            chunks: ['main'] // Indica qual bundle de entrypoint gerado será utilizado neste HTML
+        })
         // Adicione mais instâncias do HTMLWebpackPlugin para mais arquivos HTML
     ]
 }
