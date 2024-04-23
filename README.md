@@ -27,13 +27,13 @@
 
 6. Crie o arquivo `index.html` e adicione um título simples
 
-7. Crie o arquivo `main.js` e adicione um console log simples
+7. Crie o arquivo `index.js` e adicione um console log simples
 
-8. Crie o arquivo `style.css` e adicione um estilo para validar
+8. Crie o arquivo `index.css` e adicione um estilo para validar
 
 9. Crie e configure o arquivo `webpack.config.js`, copie do arquivo neste repositório! [Link para o arquivo](https://github.com/sabino-aulas/config-webpack/blob/master/webpack.config.js)
 
-10. Importe o arquivo CSS no arquivo `main.js` com `require("./style.css")`
+10. Importe o arquivo CSS no arquivo `main.js` com `require("./index.css")`
 
 11. Adicione o script de start de servidor no arquivo `package.json`
 
