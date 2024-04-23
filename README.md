@@ -39,7 +39,14 @@
 
 12. Crie o arquivo `.gitignore` e adicione `node_modules` e `dist`
 
-13. Para iniciar a aplicação, rode no terminal (e não mais no Live Server)
+13. Adicione o comando 'start' no package.json
+    ```json
+    "scripts": {
+        "start": "webpack-dev-server"
+    }
+    ```
+
+14. Para iniciar a aplicação, rode no terminal (e não mais no Live Server)
      ```
      $ npm run start
      ```
