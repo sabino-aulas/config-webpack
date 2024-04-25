@@ -38,7 +38,8 @@
 11. Adicione o script de start de servidor no arquivo `package.json`
     ```json
     "scripts": {
-        "start": "webpack-dev-server"
+        "start": "webpack-dev-server",
+        "build": "webpack"
     }
     ```
 
