@@ -36,15 +36,13 @@
 10. Importe o arquivo CSS no arquivo `main.js` com `require("./index.css")`
 
 11. Adicione o script de start de servidor no arquivo `package.json`
-
-12. Crie o arquivo `.gitignore` e adicione `node_modules` e `dist`
-
-13. Adicione o comando 'start' no package.json
-    ```json
+```json
     "scripts": {
         "start": "webpack-dev-server"
     }
     ```
+
+13. Crie o arquivo `.gitignore` e adicione `node_modules` e `dist`
 
 14. Para iniciar a aplicação, rode no terminal (e não mais no Live Server)
      ```
