@@ -2,27 +2,27 @@
 
 1. Inicialize um novo projeto NodeJS
     ```
-    $ npm init -y
+    npm init -y
     ```
 
 2. Instale as dependências webpack
     ```
-    $ npm install webpack webpack-cli webpack-dev-server
+    npm install webpack webpack-cli webpack-dev-server
     ```
 
 3. Instale o compilador de JS
     ```
-    $ npm install @babel/core babel-loader
+    npm install @babel/core babel-loader
     ```
 
 4. Para instalar os loaders de CSS
     ```
-    $ npm install css-loader style-loader sass sass-loader
+    npm install css-loader style-loader sass sass-loader
     ```
 
 5. Para instalar o plugin que injeta os módulos no HTML
     ```
-    $ npm install html-webpack-plugin
+    npm install html-webpack-plugin
     ```
 
 6. Crie o arquivo `index.html` e adicione um título simples
@@ -48,7 +48,7 @@
 
 14. Para iniciar a aplicação, rode no terminal (e não mais no Live Server)
      ```
-     $ npm run start
+     npm run start
      ```
 
 ## Problemas com watcher no Linux
