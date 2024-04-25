@@ -36,7 +36,7 @@
 10. Importe o arquivo CSS no arquivo `main.js` com `require("./index.css")`
 
 11. Adicione o script de start de servidor no arquivo `package.json`
-```json
+    ```json
     "scripts": {
         "start": "webpack-dev-server"
     }
