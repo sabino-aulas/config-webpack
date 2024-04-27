@@ -62,6 +62,7 @@
      ```
 
 ## Como configurar Jest para aceitar ES6 (import export)
+- No ReacJS, esta configuração virá pronta no projeto criado com o `create-react-app`, mas para projetos NodeJS puro, é necessário configurar o Jest para aceitar o ES6.
 
 1. Instale as dependências do Jest e Babel Jest
     ```
