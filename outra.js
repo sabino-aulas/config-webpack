@@ -1,6 +1,6 @@
 
 // Importando CSS nas páginas que utilizam este arquivo JS como chunk
-import './outra.css'
+import './outra.scss'
 // Importa soma de calculadora.js com ECMAScript Modules
 import { soma, subtracao } from './outraModulo_01.js'
 
