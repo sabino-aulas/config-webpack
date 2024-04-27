@@ -1,4 +1,14 @@
-## Como utilizar (leia tudo, depois execute):
+# Projeto de exemplo de configuração node e webpack
+
+- Repositório: [https://github.com/sabino-aulas/config-webpack](https://github.com/sabino-aulas/config-webpack)
+
+
+## Menu
+
+- [Como configurar Webpack](#como-configurar-webpack-leia-tudo-depois-execute)
+- [Como configurar Jest para aceitar ES6 (import export)](#como-configurar-jest-para-aceitar-es6-import-export)
+
+## Como configurar Webpack (leia tudo, depois execute):
 
 1. Inicialize um novo projeto NodeJS
     ```
@@ -49,6 +59,33 @@
      ```
      npm run start
      ```
+
+## Como configurar Jest para aceitar ES6 (import export)
+
+1. Instale as dependências do Jest e Babel Jest
+    ```
+    npm install jest babel-jest @babel/preset-env --save-dev
+    ```
+
+2. Crie o arquivo de configuração do Babel `.babelrc` na raiz do projeto (precisa ter o ponto na frente do nome do arquivo)
+    ```json
+    {
+      "presets": ["@babel/preset-env"]
+    }
+    ```
+
+3. Adicione o seguinte trecho de código no arquivo `package.json` para executar os testes com Jest
+    ```json
+    "scripts": {
+      "test": "jest"
+    }
+    ```
+4. Crie os arquivos de teste com a extensão `.test.js` e escreva seus testes utilizando a sintaxe do Jest
+
+5. Execute os testes com o comando
+    ```
+    npm test
+    ```
 
 ## Problemas com watcher no Linux
 ```echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p```
