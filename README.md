@@ -24,6 +24,7 @@
     ```
     npm install @babel/core babel-loader
     ```
+- Explicação: O Babel é um compilador de JavaScript que converte o código ES6 para ES5, que é suportado por todos os navegadores e módulos. O arquivo `.babelrc` (visto mais abaixo) é um arquivo de configuração do Babel que define as configurações do compilador.
 
 4. Para instalar os loaders de CSS
     ```
@@ -73,6 +74,7 @@
       "presets": ["@babel/preset-env"]
     }
     ```
+- Presets: São conjuntos de plugins do Babel que são empacotados para serem reutilizados já prontos, incluindo a configuração do jest.
 
 3. Adicione o seguinte trecho de código no arquivo `package.json` para executar os testes com Jest
     ```json
